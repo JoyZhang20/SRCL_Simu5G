@@ -16,7 +16,7 @@ Simu5G
 
 3.在命令行中输入./configure
 
-4.输入make
+4.输入make -j8
 
 ###### 安装INET4.5.2
 
@@ -26,32 +26,52 @@ Simu5G
 
 3.打开OMNeT++ 6.1 IDE，File-Import-Existing Projects into Workspace选择第2步中的INET解压目录
 
-4.打开OMNeT++ 6.1 Shell，使用下列命令编译inet4.5
+4.修复bug
+"C:\Users\Administrator\Desktop\junjie\joy\inet-4.5.2\src\inet\common\lifecycle\NodeStatus.cc":
 
-```bash
-cd workspace/inet#指向自己的目录
-make -j4#多线程加速
+```c++
+Register_Enum(inet::NodeStatus, (NodeStatus::UP, NodeStatus::DOWN, NodeStatus::GOING_UP, NodeStatus::GOING_DOWN));
 ```
 
-或者直接在IDE中选择Project-Build All
+修改为
+
+```c++
+Register_Enum(inet::NodeStatus::State, (inet::NodeStatus::UP, inet::NodeStatus::DOWN, inet::NodeStatus::GOING_UP, inet::NodeStatus::GOING_DOWN));
+```
+
+"C:\Users\Administrator\Desktop\junjie\joy\inet-4.5.2\src\inet\linklayer\common\QosClassifier.ned": delete @enum()
+
+5.Project-Build All (Ctrl+B)
+
 ###### 安装Simu5G
 
 1.从[Simu5G仓库](https://inet.omnetpp.org/Download.html)下载代码后解压到上面的workspace
 
-3.打开OMNeT++ 6.1 IDE，File-Import-Existing Projects into Workspace选择上面第1步中的Simu5G解压目录
+2.打开OMNeT++ 6.1 IDE，File-Import-Existing Projects into Workspace选择上面第1步中的Simu5G解压目录
 
-4.打开OMNeT++ 6.1 Shell，使用下列命令编译Simu5G
+3.Project-Build All (Ctrl+B)
 
-```bash
-cd workspace/simu5g#指向自己的目录
-make -j4#多线程加速
+4.修复bug："C:\Users\Administrator\Desktop\junjie\omnetpp-6.1\joy\Simu5G\src\stack\pdcp_rrc\LtePdcpRrcBase.ned"
+
+```c++
+    int conversationalRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
+    int streamingRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
+    int interactiveRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
+    int backgroundRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
 ```
 
-或者直接在IDE中选择Project-Build All
+修改为
 
-###### 可能出现的问题
-
-
+ ```   c++
+    int TM = 0;
+    int UM = 1;
+    int AM = 2;
+    int UNKNOWN_RLC_TYPE = -1;
+    int conversationalRlc = default(UM);
+    int streamingRlc = default(UM);
+    int interactiveRlc = default(UM);
+    int backgroundRlc = default(UM);
+ ```
 
 ###### 验证
 
