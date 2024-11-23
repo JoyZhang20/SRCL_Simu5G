@@ -1,10 +1,10 @@
-# SR-CL：Mobility-aware Seamless Service Migration and Resource Allocation in Multi-edge IoV Systems
+# SR-CL: Mobility-aware Seamless Service Migration and Resource Allocation in Multi-edge IoV Systems
 
-用于实现SR-CL的Simu5G仿真代码
+Simu5G simulation code for implementing SR-CL
 
-注意：此代码不能单独运行，您需要安装Simu5G仿真系统后将我们提供的代码覆盖到原始的代码以运行。
+Note: This code cannot be run alone. You need to install the Simu5G simulation system and overwrite the code we provide to the original code to run it.
 
-### 版本
+### Version
 
 win11
 
@@ -14,34 +14,34 @@ INET4.5.2
 
 Simu5G
 
-### 安装OMNet++6.1.0
+### Install OMNet++6.1.0
 
-1.在[OMNet++官网](https://omnetpp.org/download/)下载安装包后解压到本地
+1. Download the installation package from [OMNet++ official website](https://omnetpp.org/download/) and unzip it locally
 
-2.执行mingwenv.cmd
+2. Execute mingwenv.cmd
 
-3.在命令行中输入./configure
+3. Enter ./configure in the command line
 
-4.输入make -j8
+4. Enter make -j8
 
-### 安装INET4.5.2
+### Install INET4.5.2
 
-1.创建一个目录作为OMNET++的workspace
+1. Create a directory as the workspace for OMNET++
 
-2.从[INET Framework官网](https://inet.omnetpp.org/Download.html)下载安装包后解压到第1步中的workspace
+2. Download the installation package from [INET Framework official website](https://inet.omnetpp.org/Download.html) and unzip it to the workspace in step 1
 
-3.修改文件夹名为inet4.5
+3. Change the folder name to inet4.5
 
-4.打开OMNeT++ 6.1 IDE，File-Import-Existing Projects into Workspace选择第2步中的INET解压目录
+4. Open OMNeT++ 6.1 IDE, File-Import-Existing Projects into Select the INET decompression directory in step 2 in Workspace
 
-5.修复bug
+5. Fix bug
 "../workspace/inet-4.5.2/src/inet/common/lifecycle/NodeStatus.cc":
 
 ```c++
 Register_Enum(inet::NodeStatus, (NodeStatus::UP, NodeStatus::DOWN, NodeStatus::GOING_UP, NodeStatus::GOING_DOWN));
 ```
 
-修改为
+Change to
 
 ```c++
 Register_Enum(inet::NodeStatus::State, (inet::NodeStatus::UP, inet::NodeStatus::DOWN, inet::NodeStatus::GOING_UP, inet::NodeStatus::GOING_DOWN));
@@ -51,54 +51,56 @@ Register_Enum(inet::NodeStatus::State, (inet::NodeStatus::UP, inet::NodeStatus::
 
 6.Project-Build All (Ctrl+B)
 
-### 安装Simu5G
+### Install Simu5G
 
-1.从[Simu5G仓库](https://inet.omnetpp.org/Download.html)下载代码后解压到上面的workspace
+1. Download the code from [Simu5G repository](https://inet.omnetpp.org/Download.html) and unzip it to the workspace above
 
-2.打开OMNeT++ 6.1 IDE，File-Import-Existing Projects into Workspace选择上面第1步中的Simu5G解压目录
+2. Open OMNeT++ 6.1 IDE, File-Import-Existing Projects into Workspace, select the Simu5G unzip directory in step 1 above
 
 3.Project-Build All (Ctrl+B)
 
-4.修复bug："../workspace/Simu5G/src/stack/pdcp_rrc/LtePdcpRrcBase.ned"
+4. Fix bug: "../workspace/Simu5G/src/stack/pdcp_rrc/LtePdcpRrcBase.ned"
 
 ```c++
-    int conversationalRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
-    int streamingRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
-    int interactiveRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
-    int backgroundRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
+int conversationalRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
+int streamingRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
+int interactiveRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
+int backgroundRlc @enum(TM,UM,AM,UNKNOWN_RLC_TYPE) = default(1);
 ```
 
-修改为
+Change to
 
- ```   c++
-    int TM = 0;
-    int UM = 1;
-    int AM = 2;
-    int UNKNOWN_RLC_TYPE = -1;
-    int conversationalRlc = default(UM);
-    int streamingRlc = default(UM);
-    int interactiveRlc = default(UM);
-    int backgroundRlc = default(UM);
- ```
+``` c++
+int TM = 0;
+int UM = 1;
+int AM = 2;
+int UNKNOWN_RLC_TYPE = -1;
+int conversationalRlc = default(UM);
+int streamingRlc = default(UM);
+int interactiveRlc = default(UM);
+int backgroundRlc = default(UM);
+```
 
-### 验证
+### Verification
 
-打开Simu5G/simulations/NR/mec/requestResponseApp/omnetpp.ini后，点击左上角绿色的run按钮
+After opening Simu5G/simulations/NR/mec/requestResponseApp/omnetpp.ini, click the green run button in the upper left corner
 
-### 更新
+### Update
 
-将我们的requestResponseApp替换到Simu5G/simulations/NR/mec
+Replace our requestResponseApp to Simu5G/simulations/NR/mec
 
-将我们的VirtualisationInfrastructureManager替换到Simu5G/src/nodes/mec
+Replace our VirtualisationInfrastructureManager to Simu5G/src/nodes/mec
 
-### 运行
+Replace our MECOrchestrator to Simu5G/src/nodes/mec
 
-运行python程序
+### Run
 
-python3 server.py
+Run Simu5G/simulations/NR/mec/requestResponseApp/omnetpp.ini
 
-运行Simu5G/simulations/NR/mec/requestResponseApp/omnetpp.ini
+Run python program
 
-### 观察结果
+python DRL/main.py
 
-点击Simu5G/simulations/NR/mec/requestResponseApp/results/MultiMec/MultiMec--0.sca构建MultiMec-.anf，在IDE中分析或导出csv后分析（使用MultiMecHost_delay.ue[0].app[1]过滤得到用户关键指标）。
+### Observe the results
+
+Click Simu5G/simulations/NR/mec/requestResponseApp/results/MultiMec/MultiMec--0.sca to build MultiMec-.anf, analyze in IDE or export csv and analyze later (use MultiMecHost_delay.ue[0].app to filter to get the user key indicators).
