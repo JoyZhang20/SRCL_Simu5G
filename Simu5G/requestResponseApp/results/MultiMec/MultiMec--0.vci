@@ -1,0 +1,364 @@
+file 16977 1732005598                                           
+version 3
+run MultiMec-0-20241119-16:21:06-17028
+attr configname MultiMec
+attr datetime 20241119-16:21:06
+attr datetimef 20241119-162106
+attr experiment MultiMec
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network simu5g.simulations.NR.mec.requestResponseApp.MultiMecHost_delay
+attr processid 17028
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../../images;../../../../../../inet4.5/inet-4.5.2/images
+config sim-time-limit 10s
+config network simu5g.simulations.NR.mec.requestResponseApp.MultiMecHost_delay
+config **.mobility.constraintAreaMaxX 1000m
+config **.mobility.constraintAreaMaxY 750m
+config **.mobility.constraintAreaMinX 0m
+config **.mobility.constraintAreaMinY 250m
+config **.mobility.constraintAreaMinZ 0m
+config **.mobility.constraintAreaMaxZ 0m
+config **.mobility.initFromDisplayString false
+config *.carrierAggregation.numComponentCarriers 1
+config *.carrierAggregation.componentCarrier[0].numerologyIndex 0
+config *.carrierAggregation.componentCarrier[0].carrierFrequency 4GHz
+config *.carrierAggregation.componentCarrier[0].numBands 50
+config *.gnb*.cellularNic.numCarriers 1
+config *.gnb*.cellularNic.channelModel[0].componentCarrierIndex 0
+config *.ue[*].cellularNic.numCarriers 1
+config *.ue[*].cellularNic.nrChannelModel[0].componentCarrierIndex 0
+config *.gnb1.mobility.initialX 250m
+config *.gnb1.mobility.initialY 500m
+config *.gnb2.mobility.initialX 750m
+config *.gnb2.mobility.initialY 500m
+config *.numUe 10
+config *.ue[*].macCellId 0
+config *.ue[*].masterId 0
+config *.ue[*].nrMacCellId 1
+config *.ue[*].nrMasterId 1
+config *.ue[*].mobility.typename LinearMobility
+config *.ue[*].mobility.updateInterval 0.05s
+config *.ue[*].mobility.speed 5mps
+config **.dynamicCellAssociation true
+config **.enableHandover true
+config *.ue[0].mobility.initialX 280m
+config *.ue[0].mobility.initialY 500m
+config *.ue[0].mobility.initialMovementHeading 0deg
+config *.ue[1].mobility.initialX 300m
+config *.ue[1].mobility.initialY 500m
+config *.ue[1].mobility.initialMovementHeading 180deg
+config *.ue[2].mobility.initialX 350m
+config *.ue[2].mobility.initialY 500m
+config *.ue[2].mobility.initialMovementHeading 180deg
+config *.ue[3].mobility.initialX 400m
+config *.ue[3].mobility.initialY 500m
+config *.ue[3].mobility.initialMovementHeading 180deg
+config *.ue[4].mobility.initialX 450m
+config *.ue[4].mobility.initialY 500m
+config *.ue[4].mobility.initialMovementHeading 180deg
+config *.ue[5].mobility.initialX 500m
+config *.ue[5].mobility.initialY 500m
+config *.ue[5].mobility.initialMovementHeading 180deg
+config *.ue[6].mobility.initialX 650m
+config *.ue[6].mobility.initialY 500m
+config *.ue[6].mobility.initialMovementHeading 180deg
+config *.ue[7].mobility.initialX 700m
+config *.ue[7].mobility.initialY 500m
+config *.ue[7].mobility.initialMovementHeading 180deg
+config *.ue[8].mobility.initialX 780m
+config *.ue[8].mobility.initialY 500m
+config *.ue[8].mobility.initialMovementHeading 180deg
+config *.ue[9].mobility.initialX 880m
+config *.ue[9].mobility.initialY 500m
+config *.ue[9].mobility.initialMovementHeading 180deg
+config **.hasRNISupport true
+config **.tcp.typename Tcp
+config **.tcp.advertisedWindow 65535
+config **.tcp.tcpAlgorithmClass "\"TcpReno\""
+config **.tcp.sackSupport true
+config **.tcp.nagleEnabled false
+config **.tcp.mss 1452
+config **.mecHost*.virtualisationInfrastructure.ipv4.forwarding true
+config **.mecHost*.vim.scheduling "\"fair\""
+config *.mecHost*.maxMECApps 1000
+config *.mecHost*.maxRam 32GB
+config *.mecHost*.maxDisk 100TB
+config *.mecHost1.maxCpuSpeed 330000
+config *.mecHost2.maxCpuSpeed 990000
+config *.mecHost*.eNBList "\"gnb1, gnb2\""
+config *.mecHost1.mecPlatform.numMecServices 1
+config *.mecHost1.mecPlatform.mecService[0].typename RNIService
+config *.mecHost1.mecPlatform.mecService[0].localAddress "\"mecHost1.virtualisationInfrastructure\""
+config *.mecHost1.mecPlatform.mecService[0].localPort 10020
+config *.mecHost1.mecPlatform.serviceRegistry.localAddress "\"mecHost1.virtualisationInfrastructure\""
+config *.mecHost1.mecPlatform.serviceRegistry.localPort 10021
+config *.mecHost2.mecPlatform.numMecServices 1
+config *.mecHost2.mecPlatform.mecService[0].typename RNIService
+config *.mecHost2.mecPlatform.mecService[0].localAddress "\"mecHost2.virtualisationInfrastructure\""
+config *.mecHost2.mecPlatform.mecService[0].localPort 10020
+config *.mecHost2.mecPlatform.serviceRegistry.localAddress "\"mecHost2.virtualisationInfrastructure\""
+config *.mecHost2.mecPlatform.serviceRegistry.localPort 10021
+config *.mecHost*.mecPlatform.serviceRegistry.rng-0 0
+config *.mecHost*.mecPlatform.serviceRegistry.rng-1 1
+config *.mecHost*.mecPlatform.mecService[0].rng-0 1
+config *.mecHost*.mecPlatform.mecService[0].rng-1 2
+config *.mecHost*.mecPlatform.mecService[0].requestServiceTime 4ms
+config *.mecHost*.mecPlatform.mecService[0].subscriptionServiceTime 11us
+config *.mecOrchestrator.mecHostList "\"mecHost1, mecHost2\""
+config *.mecOrchestrator.mecApplicationPackageList "\"ResponseApp\""
+config *.mecHost*.mecPlatformManager.mecOrchestrator "\"mecOrchestrator\""
+config *.ue[*].numApps 2
+config *.ue[*].app[0].typename DeviceApp
+config *.ue[*].app[0].localPort 4500
+config *.ue[*].app[0].UALCMPAddress "\"ualcmp\""
+config *.ue[*].app[0].UALCMPPort 1000
+config *.ue[*].app[0].appPackageSource "\"ApplicationDescriptors/ResponseApp.json\""
+config *.ue[*].app[0].appPackageSource.appDescription "\"iedge\""
+config *.ue[*].app[1].typename UERequestApp
+config *.ue[*].app[1].deviceAppAddress "\"ue[\"+string(ancestorIndex(1))+\"]\""
+config *.ue[*].app[1].deviceAppPort 4500
+config *.ue[*].app[1].startTime 1s
+config *.ue[*].app[1].requestPacketSize 50000B
+config *.ue[*].app[1].stopTime 190s
+config *.ue[*].app[1].appPackageSource "\"ApplicationDescriptors/ResponseApp.json\""
+config *.ue[*].app[1].positionX 600m
+config *.ue[*].app[1].positionY 600m
+config *.routersDelay 2m
+config image-path ../../../images
+config output-scalar-file-append false
+config **.routingRecorder.enabled false
+config output-scalar-file results/MultiMec/MultiMec--0.sca
+config output-vector-file results/MultiMec/MultiMec--0.vec
+config seed-set 0
+config num-rngs 3
+config repeat 31
+config **.sctp.**.scalar-recording false
+config **.sctp.**.vector-recording false
+config **.mecHost*.**.vector-recording true
+config **.ue[*].app[1].**.vector-recording true
+config **.vector-recording false
+config warmup-period 0s
+config **.sctp.nagleEnabled false
+config **.sctp.enableHeartbeats false
+config **.downlink_interference true
+config **.uplink_interference true
+config **.ueTxPower 26dBm
+config **.eNodeBTxPower 46dBm
+config **.targetBler 0.01
+config **.blerShift 5
+config **.fbPeriod 40tti
+config *.configurator.config "xmldoc(\"./demo.xml\")"
+
+vector 0 MultiMecHost_delay.mecHost1.virtualisationInfrastructure.pppIf[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 1 MultiMecHost_delay.mecHost1.virtualisationInfrastructure.pppIf[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 2 MultiMecHost_delay.mecHost1.virtualisationInfrastructure.pppIf[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 3 MultiMecHost_delay.mecHost1.virtualisationInfrastructure.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 4 MultiMecHost_delay.mecHost1.virtualisationInfrastructure.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 5 MultiMecHost_delay.mecHost1.virtualisationInfrastructure.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 6 MultiMecHost_delay.mecHost1.upf_mec.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 7 MultiMecHost_delay.mecHost1.upf_mec.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 8 MultiMecHost_delay.mecHost1.upf_mec.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 9 MultiMecHost_delay.mecHost1.upf_mec.pppIf.queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 10 MultiMecHost_delay.mecHost1.upf_mec.pppIf.queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 11 MultiMecHost_delay.mecHost1.upf_mec.pppIf.ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 12 MultiMecHost_delay.mecHost1.upf_mec.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 13 MultiMecHost_delay.mecHost1.upf_mec.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 14 MultiMecHost_delay.mecHost1.upf_mec.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 15 MultiMecHost_delay.mecHost2.virtualisationInfrastructure.pppIf[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 16 MultiMecHost_delay.mecHost2.virtualisationInfrastructure.pppIf[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 17 MultiMecHost_delay.mecHost2.virtualisationInfrastructure.pppIf[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 18 MultiMecHost_delay.mecHost2.virtualisationInfrastructure.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 19 MultiMecHost_delay.mecHost2.virtualisationInfrastructure.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 20 MultiMecHost_delay.mecHost2.virtualisationInfrastructure.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 21 MultiMecHost_delay.mecHost2.upf_mec.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 22 MultiMecHost_delay.mecHost2.upf_mec.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 23 MultiMecHost_delay.mecHost2.upf_mec.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 24 MultiMecHost_delay.mecHost2.upf_mec.pppIf.queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 25 MultiMecHost_delay.mecHost2.upf_mec.pppIf.queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 26 MultiMecHost_delay.mecHost2.upf_mec.pppIf.ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 27 MultiMecHost_delay.mecHost2.upf_mec.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 28 MultiMecHost_delay.mecHost2.upf_mec.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 29 MultiMecHost_delay.mecHost2.upf_mec.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+0	16225 45 0 0 0 0 5 0 0 0 0
+1	16270 45 0 0 0 0 5 0 0 0 0
+2	16315 9 0 0 0 0 1 0 0 0 0
+3	16324 9 0 0 0 0 1 0 0 0 0
+4	16333 9 0 0 0 0 1 0 0 0 0
+5	16342 9 0 0 0 0 1 0 0 0 0
+6	16351 45 0 0 0 0 5 0 0 0 0
+7	16396 45 0 0 0 0 5 0 0 0 0
+8	16441 9 0 0 0 0 1 0 0 0 0
+9	16450 45 0 0 0 0 5 0 0 0 0
+10	16495 50 0 0 0 0 5 0 0 0 0
+11	16545 10 0 0 0 0 1 0 0 0 0
+12	16555 10 0 0 0 0 1 0 0 0 0
+13	16565 10 0 0 0 0 1 0 0 0 0
+14	16575 10 0 0 0 0 1 0 0 0 0
+15	16585 50 0 0 0 0 5 0 0 0 0
+16	16635 50 0 0 0 0 5 0 0 0 0
+17	16685 10 0 0 0 0 1 0 0 0 0
+18	16695 10 0 0 0 0 1 0 0 0 0
+19	16705 10 0 0 0 0 1 0 0 0 0
+20	16715 10 0 0 0 0 1 0 0 0 0
+21	16725 50 0 0 0 0 5 0 0 0 0
+22	16775 50 0 0 0 0 5 0 0 0 0
+23	16825 10 0 0 0 0 1 0 0 0 0
+24	16835 50 0 0 0 0 5 0 0 0 0
+25	16885 50 0 0 0 0 5 0 0 0 0
+26	16935 10 0 0 0 0 1 0 0 0 0
+27	16945 10 0 0 0 0 1 0 0 0 0
+28	16955 10 0 0 0 0 1 0 0 0 0
+29	16965 10 0 0 0 0 1 0 0 0 0
+
