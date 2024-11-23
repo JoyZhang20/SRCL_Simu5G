@@ -97,10 +97,8 @@ Replace our MECOrchestrator to Simu5G/src/nodes/mec
 
 Run Simu5G/simulations/NR/mec/requestResponseApp/omnetpp.ini
 
-Run python program
+Run python DRL/main.py
 
-python DRL/main.py
-
-### Observe the results
+### Results
 
 Click Simu5G/simulations/NR/mec/requestResponseApp/results/MultiMec/MultiMec--0.sca to build MultiMec-.anf, analyze in IDE or export csv and analyze later (use MultiMecHost_delay.ue[0].app to filter to get the user key indicators).
