@@ -57,7 +57,7 @@ Register_Enum(inet::NodeStatus::State, (inet::NodeStatus::UP, inet::NodeStatus::
 
 2. Open OMNeT++ 6.1 IDE, File-Import-Existing Projects into Workspace, select the Simu5G unzip directory in step 1 above
 
-3.Project-Build All (Ctrl+B)
+3. Project-Build All (Ctrl+B)
 
 4. Fix bug: "../workspace/Simu5G/src/stack/pdcp_rrc/LtePdcpRrcBase.ned"
 
